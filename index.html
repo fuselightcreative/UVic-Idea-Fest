@@ -35,7 +35,11 @@
     <a-marker vidhandler preset="custom" type="pattern" url="Christina.patt">
     <a-video src="#videoplayback" width="3" height="1" rotation="270 0 0"></a-video>
     </a-marker>
-     
+  
+      <a-entity camera></a-entity>
+    </a-scene>
+    
+         
     <script>
       window.addEventListener('click', function () {
       var v = document.querySelector('#videoplayback');
@@ -43,7 +47,5 @@
       });
     </script>
   
-      <a-entity camera></a-entity>
-    </a-scene>
   </body>
 </html>
