@@ -8,7 +8,7 @@
         // ...
         init: function () {
             this.toggle = false;
-            this.vid = document.querySelector("#videoID")
+            this.vid = document.querySelector("#videoplayback")
             this.vid.pause();
         },
         tick: function () {
@@ -35,7 +35,7 @@
     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
   
     <a-assets>
-        <video crossorigin="anonymous" id="videoID" autoplay loop="true" type="video/mp4" preload="auto" src="videoplayback.mp4">  
+        <video crossorigin="anonymous" id="videoplayback" autoplay loop="true" type="video/mp4" preload="auto" src="videoplayback.mp4">  
     </a-assets>
     
     <a-marker vidhandler preset="custom" type="pattern" url="Christina.patt">
