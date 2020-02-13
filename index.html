@@ -8,16 +8,16 @@
      <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
      <a-assets>
-         <video crossorigin="anonymous" id="sample" autoplay loop="true" type="video/mp4" preload="auto" src="sample.mp4">  
+         <video crossorigin="anonymous" id="videoID" autoplay loop="true" type="video/mp4" preload="auto" src="sample.mp4">  
      </a-assets>
 
      <a-marker vidhandler preset="custom" type="pattern" url="Christina.patt">
-     <a-video src="#sample" width="1.4375" height="1" rotation="270 0 0"></a-video>
+     <a-video src="#videoID" width="1.4375" height="1" rotation="270 0 0"></a-video>
      </a-marker>
      
      <script>
        window.addEventListener('click', function () {
-       var v = document.querySelector('#sample');
+       var v = document.querySelector('#videoID');
        v.play();
        });
      </script>    
