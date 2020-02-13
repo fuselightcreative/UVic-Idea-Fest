@@ -4,21 +4,20 @@
   <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
   <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script>
   <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-  <script AFRAME.registerComponent('vidhandler', {
+  <script AFRAME.registerComponent('play-on-window-click', {
   init: function () {
-    this.toggle = false;
-    document.querySelector("#videoplayback").pause(); //reference to the video
+    this.onClick = this.onClick.bind(this);
   },
-  tick:function(){  
-   if(document.querySelector("a-marker").object3D.visible == true){
-     if(!this.toggle){
-       this.toggle = true;
-       document.querySelector("#videoplayback").play();
-     }
-   }else{
-     this.toggle = false;
-     document.querySelector("#videoplayback").pause();
-   }
+  play: function () {
+    window.addEventListener('click', this.onClick);
+  },
+  pause: function () {
+    window.removeEventListener('click', this.onClick);
+  },
+  onClick: function (evt) {
+    var video = this.el.components.material.material.map.image;
+    if (!video) { return; }
+    video.play();
   }
 });
           </script>
